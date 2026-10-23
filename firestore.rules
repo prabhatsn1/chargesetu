@@ -1,0 +1,85 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isAdmin() {
+      // Internal moderation list — see §3 of the build prompt (no separate admin app in MVP).
+      return isSignedIn() && request.auth.uid in [
+        'REPLACE_WITH_ADMIN_UID_1'
+      ];
+    }
+
+    // ---- users/{uid} ----
+    match /users/{uid} {
+      allow read: if isSignedIn();
+      allow create: if isSelf(uid);
+      allow update: if isSelf(uid) || isAdmin();
+      allow delete: if false;
+    }
+
+    // ---- chargers/{chargerId} ----
+    match /chargers/{chargerId} {
+      allow read: if true;
+      allow create: if isSignedIn() && request.resource.data.hostId == request.auth.uid;
+      allow update, delete: if isSignedIn() && resource.data.hostId == request.auth.uid || isAdmin();
+    }
+
+    // ---- bookings/{bookingId} ----
+    match /bookings/{bookingId} {
+      allow read: if isSignedIn() &&
+        (resource.data.chargeeId == request.auth.uid || resource.data.hostId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && request.resource.data.chargeeId == request.auth.uid;
+      // Host can accept/decline; Chargee can cancel their own pending request.
+      allow update: if isSignedIn() &&
+        (resource.data.hostId == request.auth.uid || resource.data.chargeeId == request.auth.uid || isAdmin());
+      allow delete: if false;
+    }
+
+    // ---- sessions/{sessionId} ----
+    match /sessions/{sessionId} {
+      allow read: if isSignedIn() &&
+        (resource.data.chargeeId == request.auth.uid || resource.data.hostId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && request.resource.data.chargeeId == request.auth.uid;
+      // Chargee updates start/stop + photos; Host updates confirmation status; payment fields are
+      // written by Cloud Functions only via the Admin SDK, which bypasses these rules.
+      allow update: if isSignedIn() &&
+        (resource.data.chargeeId == request.auth.uid || resource.data.hostId == request.auth.uid || isAdmin());
+      allow delete: if false;
+    }
+
+    // ---- reviews/{reviewId} ----
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if isSignedIn() && request.resource.data.fromUid == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    // ---- notifications/{notificationId} ----
+    match /notifications/{notificationId} {
+      allow read: if isSignedIn() && resource.data.toUid == request.auth.uid;
+      // Written only by Cloud Functions via the Admin SDK, which bypasses these rules.
+      allow create: if false;
+      // Chargee/Host may only flip `read`.
+      allow update: if isSignedIn() && resource.data.toUid == request.auth.uid &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
+      allow delete: if false;
+    }
+
+    // ---- reports/{reportId} ----
+    match /reports/{reportId} {
+      allow read: if isAdmin();
+      allow create: if isSignedIn() && request.resource.data.reportedBy == request.auth.uid;
+      allow update: if isAdmin();
+      allow delete: if false;
+    }
+  }
+}

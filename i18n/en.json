@@ -1,0 +1,170 @@
+{
+  "nav": {
+    "charger": "Charger",
+    "booking": "Booking",
+    "session": "Session"
+  },
+  "days": {
+    "sun": "Sun",
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat"
+  },
+  "common": {
+    "appName": "ChargeSetu",
+    "loading": "Loading…",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "next": "Next",
+    "back": "Back",
+    "done": "Done",
+    "error": {
+      "generic": "Something went wrong. Please try again.",
+      "network": "Check your internet connection and try again."
+    }
+  },
+  "auth": {
+    "phoneTitle": "Enter your mobile number",
+    "phonePlaceholder": "10-digit mobile number",
+    "sendOtp": "Send OTP",
+    "otpTitle": "Enter the OTP sent to {{phone}}",
+    "verifyOtp": "Verify & continue",
+    "orContinueWith": "or continue with",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithApple": "Continue with Apple",
+    "profileSetupTitle": "Tell us about you",
+    "name": "Full name",
+    "emailOptional": "Email (optional)",
+    "errors": {
+      "invalidPhone": "Enter a valid 10-digit mobile number",
+      "invalidOtp": "That code didn't match. Try again.",
+      "tooManyRequests": "Too many attempts. Please wait and try again."
+    }
+  },
+  "tabs": {
+    "home": "Home",
+    "host": "Host",
+    "bookings": "Bookings",
+    "profile": "Profile"
+  },
+  "home": {
+    "title": "Find a charger nearby",
+    "listView": "List",
+    "mapView": "Map",
+    "filtersButton": "Filters",
+    "filters": {
+      "connectorType": "Connector type",
+      "maxDistance": "Max distance",
+      "priceRange": "Price range",
+      "priceRangePlaceholder": "Max ₹/hr",
+      "availableNow": "Available now"
+    },
+    "empty": "No chargers found nearby. Try widening your filters."
+  },
+  "charger": {
+    "perHour": "₹{{rate}}/hr",
+    "powerKw": "{{power}} kW",
+    "requestToBook": "Request to book",
+    "hostedBy": "Hosted by {{name}}",
+    "verifiedHost": "Verified host"
+  },
+  "booking": {
+    "title": "Confirm your booking",
+    "estimatedCost": "Estimated cost (based on expected duration)",
+    "estimatedDuration": "Estimated duration",
+    "pickTime": "Pick a time",
+    "now": "Now",
+    "later": "Schedule for later",
+    "confirmRequest": "Send request",
+    "statusPending": "Waiting for host approval",
+    "statusAccepted": "Accepted — see you soon!",
+    "statusDeclined": "Declined by host",
+    "statusCancelled": "Cancelled",
+    "statusCompleted": "Completed"
+  },
+  "session": {
+    "startCharging": "Start charging",
+    "stopCharging": "Stop charging",
+    "takeStartPhoto": "Take a photo of your charge display to start",
+    "takeEndPhoto": "Take a photo of your charge display to finish",
+    "elapsed": "Elapsed time",
+    "runningCost": "Running cost (estimate)",
+    "billingNotice": "Billing is time-based (rate × minutes), not energy-based. Photos help resolve disputes."
+  },
+  "payment": {
+    "title": "Pay for your session",
+    "payNow": "Pay now",
+    "gstNotice": "GST ({{rate}}%) applies to the platform fee only"
+  },
+  "host": {
+    "listChargerWizard": "List my charger",
+    "location": "Location",
+    "connectorTypes": "Connector type(s)",
+    "powerRating": "Power rating (kW)",
+    "photos": "Photos",
+    "hourlyRate": "Hourly rate",
+    "rateCalculator": "Rate calculator",
+    "rateCalculatorHint": "Suggested rate based on a {{margin}}% margin over your cost per kWh",
+    "availability": "Availability",
+    "blockedDates": "Blocked dates",
+    "addBlockedDate": "Add date",
+    "from": "From",
+    "to": "To",
+    "minSessionCharge": "Minimum session charge",
+    "myCharger": "My charger",
+    "editListing": "Edit listing",
+    "upcomingBookings": "Upcoming bookings",
+    "incomingRequests": "Incoming requests",
+    "earnings": "Earnings",
+    "pendingPayout": "Pending payout",
+    "payoutHistory": "Payout history",
+    "confirmSession": "Confirm session",
+    "disputeSession": "Flag a dispute",
+    "rateChargee": "Rate Chargee",
+    "autoConfirmNotice": "Auto-confirms in {{hours}}h if you don't respond"
+  },
+  "reviews": {
+    "rateHost": "Rate your host",
+    "rateChargee": "Rate this Chargee",
+    "commentOptional": "Comment (optional)"
+  },
+  "profile": {
+    "title": "Profile",
+    "language": "Language",
+    "editProfile": "Edit profile",
+    "editPhoto": "Change photo",
+    "payoutAccount": "Payout account",
+    "payoutStatus": {
+      "unlinked": "Not linked",
+      "pending": "Submitted — under review by Razorpay",
+      "activated": "Active",
+      "under_review": "Under review by Razorpay",
+      "rejected": "Rejected — contact support"
+    },
+    "identityVerification": "Identity verification",
+    "identityVerificationHint": "A quick check so other users can trust you as a Host — reviewed manually, not an automated KYC check.",
+    "aadhaarLast4Label": "Last 4 digits of Aadhaar",
+    "selfieLabel": "Selfie",
+    "takeSelfie": "Take selfie",
+    "submitVerification": "Submit for review",
+    "verificationStatus": {
+      "unverified": "Not submitted",
+      "pending": "Submitted — awaiting review",
+      "verified": "Verified",
+      "rejected": "Rejected — contact support"
+    },
+    "vehicleDetails": "Vehicle details",
+    "vehicleModelPlaceholder": "EV model",
+    "vpaPlaceholder": "UPI VPA (e.g. name@bank)",
+    "reportUser": "Report / block user"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "You're all caught up."
+  }
+}

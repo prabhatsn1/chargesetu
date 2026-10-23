@@ -1,0 +1,170 @@
+{
+  "nav": {
+    "charger": "चार्जर",
+    "booking": "बुकिंग",
+    "session": "सेशन"
+  },
+  "days": {
+    "sun": "रवि",
+    "mon": "सोम",
+    "tue": "मंगल",
+    "wed": "बुध",
+    "thu": "गुरु",
+    "fri": "शुक्र",
+    "sat": "शनि"
+  },
+  "common": {
+    "appName": "चार्जसेतु",
+    "loading": "लोड हो रहा है…",
+    "retry": "फिर से कोशिश करें",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "save": "सहेजें",
+    "next": "आगे",
+    "back": "वापस",
+    "done": "हो गया",
+    "error": {
+      "generic": "कुछ गलत हो गया। कृपया फिर से कोशिश करें।",
+      "network": "अपना इंटरनेट कनेक्शन जांचें और फिर से कोशिश करें।"
+    }
+  },
+  "auth": {
+    "phoneTitle": "अपना मोबाइल नंबर दर्ज करें",
+    "phonePlaceholder": "10 अंकों का मोबाइल नंबर",
+    "sendOtp": "OTP भेजें",
+    "otpTitle": "{{phone}} पर भेजा गया OTP दर्ज करें",
+    "verifyOtp": "सत्यापित करें और जारी रखें",
+    "orContinueWith": "या इसके साथ जारी रखें",
+    "continueWithGoogle": "Google से जारी रखें",
+    "continueWithApple": "Apple से जारी रखें",
+    "profileSetupTitle": "अपने बारे में बताएं",
+    "name": "पूरा नाम",
+    "emailOptional": "ईमेल (वैकल्पिक)",
+    "errors": {
+      "invalidPhone": "एक मान्य 10 अंकों का मोबाइल नंबर दर्ज करें",
+      "invalidOtp": "कोड मेल नहीं खाया। फिर से कोशिश करें।",
+      "tooManyRequests": "बहुत सारे प्रयास। कृपया प्रतीक्षा करें और फिर से कोशिश करें।"
+    }
+  },
+  "tabs": {
+    "home": "होम",
+    "host": "होस्ट",
+    "bookings": "बुकिंग",
+    "profile": "प्रोफ़ाइल"
+  },
+  "home": {
+    "title": "पास में चार्जर खोजें",
+    "listView": "सूची",
+    "mapView": "मानचित्र",
+    "filtersButton": "फ़िल्टर",
+    "filters": {
+      "connectorType": "कनेक्टर प्रकार",
+      "maxDistance": "अधिकतम दूरी",
+      "priceRange": "मूल्य सीमा",
+      "priceRangePlaceholder": "अधिकतम ₹/घंटा",
+      "availableNow": "अभी उपलब्ध"
+    },
+    "empty": "पास में कोई चार्जर नहीं मिला। अपने फ़िल्टर बढ़ाकर देखें।"
+  },
+  "charger": {
+    "perHour": "₹{{rate}}/घंटा",
+    "powerKw": "{{power}} kW",
+    "requestToBook": "बुकिंग का अनुरोध करें",
+    "hostedBy": "होस्ट: {{name}}",
+    "verifiedHost": "सत्यापित होस्ट"
+  },
+  "booking": {
+    "title": "अपनी बुकिंग की पुष्टि करें",
+    "estimatedCost": "अनुमानित लागत (अपेक्षित अवधि पर आधारित)",
+    "estimatedDuration": "अनुमानित अवधि",
+    "pickTime": "समय चुनें",
+    "now": "अभी",
+    "later": "बाद के लिए शेड्यूल करें",
+    "confirmRequest": "अनुरोध भेजें",
+    "statusPending": "होस्ट की स्वीकृति का इंतज़ार",
+    "statusAccepted": "स्वीकृत — मिलते हैं!",
+    "statusDeclined": "होस्ट ने अस्वीकार किया",
+    "statusCancelled": "रद्द कर दिया गया",
+    "statusCompleted": "पूर्ण"
+  },
+  "session": {
+    "startCharging": "चार्जिंग शुरू करें",
+    "stopCharging": "चार्जिंग बंद करें",
+    "takeStartPhoto": "शुरू करने के लिए अपने चार्ज डिस्प्ले की फ़ोटो लें",
+    "takeEndPhoto": "समाप्त करने के लिए अपने चार्ज डिस्प्ले की फ़ोटो लें",
+    "elapsed": "बीता हुआ समय",
+    "runningCost": "चालू लागत (अनुमान)",
+    "billingNotice": "बिलिंग समय-आधारित है (दर × मिनट), ऊर्जा-आधारित नहीं। फ़ोटो विवाद सुलझाने में मदद करती हैं।"
+  },
+  "payment": {
+    "title": "अपने सेशन का भुगतान करें",
+    "payNow": "अभी भुगतान करें",
+    "gstNotice": "GST ({{rate}}%) केवल प्लेटफ़ॉर्म शुल्क पर लागू होता है"
+  },
+  "host": {
+    "listChargerWizard": "अपना चार्जर सूचीबद्ध करें",
+    "location": "स्थान",
+    "connectorTypes": "कनेक्टर प्रकार",
+    "powerRating": "पावर रेटिंग (kW)",
+    "photos": "फ़ोटो",
+    "hourlyRate": "प्रति घंटा दर",
+    "rateCalculator": "दर कैलकुलेटर",
+    "rateCalculatorHint": "आपकी प्रति kWh लागत पर {{margin}}% मार्जिन के आधार पर सुझाई गई दर",
+    "availability": "उपलब्धता",
+    "blockedDates": "अवरुद्ध तारीखें",
+    "addBlockedDate": "तारीख जोड़ें",
+    "from": "से",
+    "to": "तक",
+    "minSessionCharge": "न्यूनतम सेशन शुल्क",
+    "myCharger": "मेरा चार्जर",
+    "editListing": "लिस्टिंग संपादित करें",
+    "upcomingBookings": "आगामी बुकिंग",
+    "incomingRequests": "आने वाले अनुरोध",
+    "earnings": "कमाई",
+    "pendingPayout": "लंबित भुगतान",
+    "payoutHistory": "भुगतान इतिहास",
+    "confirmSession": "सेशन की पुष्टि करें",
+    "disputeSession": "विवाद दर्ज करें",
+    "rateChargee": "चार्जी को रेट करें",
+    "autoConfirmNotice": "यदि आप जवाब नहीं देते हैं तो {{hours}} घंटे में अपने आप पुष्टि हो जाएगी"
+  },
+  "reviews": {
+    "rateHost": "अपने होस्ट को रेट करें",
+    "rateChargee": "इस चार्जी को रेट करें",
+    "commentOptional": "टिप्पणी (वैकल्पिक)"
+  },
+  "profile": {
+    "title": "प्रोफ़ाइल",
+    "language": "भाषा",
+    "editProfile": "प्रोफ़ाइल संपादित करें",
+    "editPhoto": "फ़ोटो बदलें",
+    "payoutAccount": "भुगतान खाता",
+    "payoutStatus": {
+      "unlinked": "लिंक नहीं किया गया",
+      "pending": "सबमिट किया गया — Razorpay द्वारा समीक्षाधीन",
+      "activated": "सक्रिय",
+      "under_review": "Razorpay द्वारा समीक्षाधीन",
+      "rejected": "अस्वीकृत — सहायता से संपर्क करें"
+    },
+    "identityVerification": "पहचान सत्यापन",
+    "identityVerificationHint": "ताकि अन्य उपयोगकर्ता आप पर एक होस्ट के रूप में भरोसा कर सकें — यह मैन्युअल रूप से समीक्षा की जाती है, स्वचालित KYC जांच नहीं है।",
+    "aadhaarLast4Label": "आधार के अंतिम 4 अंक",
+    "selfieLabel": "सेल्फी",
+    "takeSelfie": "सेल्फी लें",
+    "submitVerification": "समीक्षा के लिए सबमिट करें",
+    "verificationStatus": {
+      "unverified": "सबमिट नहीं किया गया",
+      "pending": "सबमिट किया गया — समीक्षा लंबित",
+      "verified": "सत्यापित",
+      "rejected": "अस्वीकृत — सहायता से संपर्क करें"
+    },
+    "vehicleDetails": "वाहन विवरण",
+    "vehicleModelPlaceholder": "EV मॉडल",
+    "vpaPlaceholder": "UPI VPA (जैसे name@bank)",
+    "reportUser": "उपयोगकर्ता की रिपोर्ट करें / ब्लॉक करें"
+  },
+  "notifications": {
+    "title": "सूचनाएं",
+    "empty": "आप पूरी तरह अप टू डेट हैं।"
+  }
+}
