@@ -102,7 +102,11 @@ export default function ProfileSetupScreen() {
         )}
       />
 
-      <Button label={t('common.next')} loading={isSubmitting} onPress={handleSubmit(onSubmit)} />
+      <Button
+        label={t('common.next')}
+        loading={isSubmitting}
+        onPress={() => handleSubmit(onSubmit)()}
+      />
     </Screen>
   );
 }

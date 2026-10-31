@@ -59,7 +59,11 @@ export default function PhoneEntryScreen() {
         )}
       />
 
-      <Button label={t('auth.sendOtp')} loading={isSending} onPress={handleSubmit(onSubmit)} />
+      <Button
+        label={t('auth.sendOtp')}
+        loading={isSending}
+        onPress={() => handleSubmit(onSubmit)()}
+      />
 
       <View className="flex-row items-center gap-3">
         <View className="h-px flex-1 bg-border" />
