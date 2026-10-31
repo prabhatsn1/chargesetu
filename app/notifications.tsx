@@ -1,4 +1,4 @@
-import { router } from 'expo-router';
+import { router, type Href } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Pressable, Text, View } from 'react-native';
 
@@ -9,20 +9,20 @@ import { useMarkNotificationRead, useNotifications } from '@/features/notificati
 import { useAuthStore } from '@/store/authStore';
 import type { AppNotification } from '@/types';
 
-function targetRoute(notification: AppNotification): string | null {
+function targetRoute(notification: AppNotification): Href | null {
   switch (notification.kind) {
     case 'booking_requested':
     case 'booking_accepted':
     case 'booking_declined':
-      return notification.bookingId ? `/booking/${notification.bookingId}` : null;
+      return notification.bookingId ? (`/booking/${notification.bookingId}` as Href) : null;
     case 'session_started':
     case 'session_ended':
     case 'session_confirmation_needed':
-      return notification.sessionId ? `/session/${notification.sessionId}` : null;
+      return notification.sessionId ? (`/session/${notification.sessionId}` as Href) : null;
     case 'payment_receipt':
-      return notification.sessionId ? `/payment/${notification.sessionId}` : null;
+      return notification.sessionId ? (`/payment/${notification.sessionId}` as Href) : null;
     case 'payout_confirmed':
-      return '/host/earnings';
+      return '/host/earnings' as Href;
     default:
       return null;
   }
