@@ -1,4 +1,33 @@
+import { IOSConfig, withDangerousMod, type ConfigPlugin } from '@expo/config-plugins';
+import { mergeContents } from '@expo/config-plugins/build/utils/generateCode';
+import fs from 'node:fs';
 import type { ConfigContext, ExpoConfig } from 'expo/config';
+
+// @react-native-firebase/app's AppDelegate patcher looks for `self.moduleName = "..."`
+// or `factory.startReactNative(`, neither of which exist in Expo SDK 58's SceneDelegate-based
+// AppDelegate.swift template, so it silently skips adding `FirebaseApp.configure()`. Patch it
+// in ourselves, anchored on the `return super.application(...)` call instead.
+const withFirebaseAppDelegateFix: ConfigPlugin = (config) =>
+  withDangerousMod(config, [
+    'ios',
+    async (config) => {
+      const { path } = IOSConfig.Paths.getAppDelegate(config.modRequest.projectRoot);
+      const contents = await fs.promises.readFile(path, 'utf8');
+      if (contents.includes('FirebaseApp.configure()')) return config;
+
+      const newContents = mergeContents({
+        tag: 'chargesetu-firebase-configure',
+        src: contents,
+        newSrc: '    FirebaseApp.configure()',
+        anchor: /return super\.application\(/,
+        offset: 0,
+        comment: '//',
+      }).contents;
+
+      await fs.promises.writeFile(path, newContents);
+      return config;
+    },
+  ]);
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
@@ -50,6 +79,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   plugins: [
     'expo-router',
     '@react-native-firebase/app',
+    withFirebaseAppDelegateFix,
     '@react-native-firebase/auth',
     '@react-native-firebase/messaging',
     [
@@ -93,7 +123,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     'expo-apple-authentication',
-  ],
+  ] as ExpoConfig['plugins'],
   experiments: {
     typedRoutes: true,
     reactCompiler: true,
